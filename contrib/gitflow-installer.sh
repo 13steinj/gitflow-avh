@@ -28,7 +28,11 @@ if [ -z "$REPO_NAME" ] ; then
 fi
 
 if [ -z "$REPO_HOME" ] ; then
-	REPO_HOME="https://github.com/petervanderdoes/gitflow-avh.git"
+	REPO_HOME="https://github.com/13steinj/gitflow-avh.git"
+fi
+
+if [ -x "$(which git)" -a -d "$(git rev-parse --show-toplevel)" ] ; then
+	REPO_NAME="$(git rev-parse --show-toplevel)"
 fi
 
 EXEC_PREFIX="$PREFIX"
